@@ -1,33 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-scroll";
 
 type Menu = {
   name: string;
-  href: string;
 };
 
 const menu: Menu[] = [
   {
     name: "ABOUT",
-    href: "/about",
   },
   {
     name: "SERVICES",
-    href: "/services",
   },
   {
     name: "PORTFOLIO",
-    href: "/portfolio",
   },
   {
     name: "CONTACT",
-    href: "/contact",
   },
 ];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  console.log("menuOpen", menuOpen);
   const dropDownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,13 +43,18 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="p-4 bg-blue-600 text-white text-sm font-medium flex justify-between items-center relative">
+    <header className="p-4 bg-sky-950 text-white text-sm font-medium flex justify-between items-center relative">
       <h1 className="text-2xl font-bold">My Portfolio</h1>
       <nav>
         <ul className="md:flex gap-4 hidden">
           {menu.map((item) => (
-            <li className="hover:text-blue-950 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8">
-              <a href={item.href}>{item.name}</a>
+            <li
+              key={item.name}
+              className="hover:text-sky-400 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8"
+            >
+              <Link to={item.name} smooth={true} duration={500}>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -66,11 +66,16 @@ const Header = () => {
             <MenuIcon />
           </button>
           {menuOpen ? (
-            <div className="absolute right-5 top-9 bg-blue-400  mt-3 rounded p-3 px-5 flex flex-col gap-3 z-10">
+            <div className="absolute right-5 top-9 bg-sky-900 opacity-75  mt-3 rounded p-3 px-5 flex flex-col gap-3 z-10">
               <ul>
                 {menu.map((item) => (
-                  <li className="hover:text-blue-950 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8 py-2 px-1">
-                    <a href={item.href}>{item.name}</a>
+                  <li
+                    key={item.name}
+                    className="hover:text-sky-400 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8 py-2 px-1"
+                  >
+                    <Link to={item.name} smooth={true} duration={500}>
+                      {item.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
