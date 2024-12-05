@@ -43,14 +43,14 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="p-4 bg-sky-950 text-white text-sm font-medium flex justify-between items-center relative">
+    <header className="p-4 bg-sky-950 text-white text-sm  flex justify-between items-center relative">
       <h1 className="text-2xl font-bold">My Portfolio</h1>
       <nav>
         <ul className="md:flex gap-4 hidden">
           {menu.map((item) => (
             <li
               key={item.name}
-              className="hover:text-sky-400 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8"
+              className="hover:text-sky-400 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8 font-medium"
             >
               <Link to={item.name} smooth={true} duration={500}>
                 {item.name}
@@ -71,7 +71,7 @@ const Header = () => {
                 {menu.map((item) => (
                   <li
                     key={item.name}
-                    className="hover:text-sky-400 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8 py-2 px-1"
+                    className="hover:text-sky-400 transition-all duration-100 ease-in-out cursor-pointer hover:underline underline-offset-8 py-2 px-1 font-medium"
                   >
                     <Link to={item.name} smooth={true} duration={500}>
                       {item.name}
