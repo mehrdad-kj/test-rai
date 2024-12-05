@@ -4,6 +4,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content-div {
@@ -17,6 +18,3 @@
   background-image: linear-gradient(to right, #0c4160, #738fa7) !important;
 }
 
-.mobile-menu-hover:hover {
-  color: #ffff2e;
-}
