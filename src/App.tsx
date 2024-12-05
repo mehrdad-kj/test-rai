@@ -1,11 +1,12 @@
+import Header from "./components/Header"
 
 
 function App() {
 
   return (
-    <>
-      <h1 className="font-bold">test</h1>
-    </>
+    <div className="min-h-screen bg-gray-100">
+      <Header />
+    </div>
   )
 }
 
